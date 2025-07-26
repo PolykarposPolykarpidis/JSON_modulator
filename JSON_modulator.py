@@ -29,7 +29,7 @@ class JSON_modulator:
     def key_remove(self, position: str, key: str) -> bool:
         res = self._find_position(position)
         if res is None:
-            logging.error("Couldn’t perform key removal.")
+            logging.error("Couldn't perform key removal.")
             return False
         try:
             res.pop(key)
@@ -42,7 +42,7 @@ class JSON_modulator:
     def subjson_append(self, position: str, subjson: dict) -> bool:
         res = self._find_position(position)
         if res is None:
-            logging.error("Couldn’t append subjson.")
+            logging.error("Couldn't append subjson.")
             return False
         if not isinstance(res, dict):
             logging.error(f"Target at '{position}' is not a dict.")
@@ -54,7 +54,7 @@ class JSON_modulator:
     def listitem_append(self, position: str, item: Union[str, int, float]) -> bool:
         res = self._find_position(position)
         if res is None:
-            logging.error("Couldn’t append list item.")
+            logging.error("Couldn't append list item.")
             return False
         if not isinstance(res, list):
             logging.error(f"Target at '{position}' is not a list.")
@@ -66,7 +66,7 @@ class JSON_modulator:
     def listitem_delete(self, position: str, item) -> bool:
         res = self._find_position(position)
         if res is None:
-            logging.error("Couldn’t delete list item.")
+            logging.error("Couldn't delete list item.")
             return False
         if not isinstance(res, list):
             logging.error(f"Target at '{position}' is not a list.")
